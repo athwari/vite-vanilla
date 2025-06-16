@@ -110,8 +110,10 @@ App.prototype.postAllLastUpdatedToTaxilla = async function () {
 };
 
 console.log(app)
-console.log(import.meta)
+console.log(import.meta.env)
+console.log(import.meta.env.VITE_TEST)
 console.log(process.env)
+console.log(window.env)
 
 document.addEventListener(
   "DOMContentLoaded",
