@@ -32,6 +32,13 @@ jobs:
           api_location: "" # Api source code path - optional
           output_location: "dist" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
+        #Allow repo secrets
+        env:
+          VITE_FUNCTION_KEY_postReceivablesInvoicesToTaxilla: ${{ secrets.VITE_FUNCTION_KEY_postReceivablesInvoicesToTaxilla }}
+          VITE_FUNCTION_KEY_postReceivablesCreditMemosToTaxilla: ${{ secrets.VITE_FUNCTION_KEY_postReceivablesCreditMemosToTaxilla }}
+          VITE_FUNCTION_KEY_postLastUpdatedReceivablesInvoicesToTaxilla: ${{ secrets.VITE_FUNCTION_KEY_postLastUpdatedReceivablesInvoicesToTaxilla }}
+          VITE_FUNCTION_KEY_postLastUpdatedReceivablesCreditMemosToTaxilla: ${{ secrets.VITE_FUNCTION_KEY_postLastUpdatedReceivablesCreditMemosToTaxilla }}
+          
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
