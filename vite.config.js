@@ -1,4 +1,6 @@
 import { defineConfig } from "vite";
+import path from 'path';
+//import Config from "vite";
 //import { defineConfig, loadEnv } from "vite";
 
 
@@ -14,9 +16,20 @@ import { fileURLToPath } from 'node:url'
 export default defineConfig({
   //root: 'src',
   //publicDir: "../public",
+base: "./",
+/*
+  resolve: {
+    alias: {
+      //'@': path.resolve(__dirname, './src'),
+      '@': fileURLToPath(new URL('./src', import.meta.url))
+    },
+  },
+  */
   build: {
     //outDir: "../dist",
+
     emptyOutDir: true,
+    
     rollupOptions: {
       output: {
         assetFileNames: ({ names = [] }) => {
@@ -40,6 +53,7 @@ export default defineConfig({
         chunkFileNames: 'assets/js/[name]-[hash].js',
         entryFileNames: 'assets/js/[name]-[hash].js',
       },
+      
     },
   },
 });
