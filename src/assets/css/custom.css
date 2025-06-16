@@ -1,0 +1,156 @@
+/* Custom CSS */
+#page-container {
+  margin: auto;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  min-height: calc(100vh - 0px);
+}
+
+#page-content {
+  direction: ltr;
+  width: 350px;
+  max-width: 350px;
+  text-align: center;
+}
+
+.alert-back {
+  padding-top: unset;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form#sumbit_form input {
+  direction: ltr;
+  text-align: center;
+  border: 2px dashed var(--color-main-01);
+  background: #eee;
+}
+
+form#sumbit_form .input-field {
+  margin: 0;
+}
+
+form#sumbit_form .input-field {
+  margin: 0;
+}
+
+.banner {
+  background: transparent;
+  box-shadow: unset;
+  border-bottom: unset;
+  padding: unset;
+  margin: unset;
+}
+
+.error-container {
+  display: none;
+}
+
+.error-container.active {
+    display: flex;
+    z-index: 2
+}
+
+.info-container {
+    display: none;
+}
+
+.info-container.active {
+    display: flex;
+    z-index: 2
+}
+
+.title.sucess {
+  color: green;
+}
+
+.modal-icon.sucess {
+  background: green;
+}
+
+.alert-back {
+  display: none;
+}
+
+#submit-form-container {
+  display: block;
+}
+
+.submit .button {
+  border-bottom: unset;
+}
+
+.input-group {
+  display: list-item;
+  justify-items: center;
+}
+
+.input-field {
+  width: 100%;
+}
+
+.txt1 {
+  font-family: Poppins-Regular;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #666666;
+}
+
+.logo-basheer img {
+  width: 100%;
+}
+
+.form-title {
+  margin: 25px 0 1px 0;
+}
+
+#error-details {
+  max-height: 300px;
+  overflow: auto;
+}
+
+.modal-icon.error {
+  cursor: pointer;
+}
+
+#error-details {
+  display: none;
+}
+
+
+.loader {
+    position:fixed; top:0;
+    left:0; right:0; bottom:0;     
+    background:rgba(0,0,0,.6);
+    z-index:99999;
+    display: flex;
+        flex-flow: column;
+        align-items: center;
+        justify-content: center;
+   }
+
+.loader div  {
+    display: block;
+    border: 12px solid #ccc;
+    border-radius: 50%;
+    border-top: 12px solid var(--color-main-01);
+    width: 60px;
+    height: 60px;
+    -webkit-animation: spin 2s linear infinite; /* Safari */
+    animation: spin 2s linear infinite;
+  }
+
+    /* Safari */
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }

@@ -1,0 +1,298 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: width 0.3s ease;
+  -moz-box-sizing: border-box;
+}
+
+:root {
+  --color-black: #000;
+  --color-white: #fff;
+
+  --color-1-o: #1b1f3b;
+  --color-2-o: #2a2d45;
+  --color-3-o: #3f3f5e;
+  --color-4-o: #6b0f8c;
+
+  --color-main-01: #c85538;
+  --color-main-02: #833f2e;
+  --color-main-03: #c16f5b;
+  --color-main-04: #ee3d13;
+}
+
+body {
+  background: var(--color-main-01);
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    203deg,
+    var(--color-2-o) 4.56%,
+    var(--color-3-o) 48.29%,
+    var(--color-4-o) 86.32%
+  );
+
+  background: -webkit-linear-gradient(
+    to bottom,
+    var(--color-main-03) var(--color-main-01),
+    var(--color-main-02)
+  );
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to bottom,
+    var(--color-main-03),
+    var(--color-main-01),
+    var(--color-main-02)
+  );
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  background: #ccc;
+}
+
+html {
+  min-height: 100%;
+  font-weight: bold;
+}
+
+.form {
+  width: 350px;
+  background: #fbfbfb;
+  max-width: 350px;
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 10px;
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.44), 0px 0px 0px rgba(0, 0, 0, 0.44),
+    3px 3px 3px rgba(0, 0, 0, 0.22);
+  -webkit-box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.44),
+    0px 0px 0px rgba(0, 0, 0, 0.44), 3px 3px 3px rgba(0, 0, 0, 0.22);
+  -moz-box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.44),
+    0px 0px 0px rgba(0, 0, 0, 0.44), 3px 3px 3px rgba(0, 0, 0, 0.22);
+  margin: 0px auto 12px auto;
+  text-align: center;
+  border: 1px solid #eee;
+  animation: jello 1s ease;
+  overflow: hidden;
+}
+
+.form .input-group .input-field {
+  margin: 20px 0;
+  position: relative;
+}
+
+.form .input-group .input-field input {
+  border: none;
+  direction: ltr;
+  background: none;
+  outline: none;
+  border: 1px dashed #cad4d7;
+  width: 90%;
+  height: 40px;
+  border-radius: 20px;
+  padding: 3px 10px;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  font-size: 14px;
+  font-weight: 600;
+  color: #242628;
+}
+
+.banner {
+  text-align: center;
+  overflow: hidden;
+  background: #f8f9fa;
+  padding: 5px;
+  margin: 0 9px 25px 9px;
+  box-shadow: 0px 1px 3px #0c0c0c;
+  -webkit-box-shadow: 0px 1px 3px #0c0c0c;
+  -moz-box-shadow: 0px 1px 3px #0c0c0c;
+  border-radius: 10px;
+  border-bottom: 10px solid rgba(0, 0, 0, 0.22);
+}
+
+@media screen and (max-width: 450px) {
+  .logo-basheer img {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 370px) {
+  .logo-basheer {
+    width: 90%;
+  }
+
+  .form {
+    width: 90%;
+    margin: 0px auto 12px auto;
+  }
+
+  .banner {
+    top: -25%;
+  }
+
+  .logo-basheer img {
+    width: 100%;
+  }
+}
+
+.alert-back {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.75);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 1000;
+  padding-top: 100px;
+}
+
+.modal {
+  position: relative;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  width: 450px;
+  background: #fff;
+  margin: 0 auto;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border: 2px solid var(--color-main-01);
+  padding: 15px;
+  text-align: left;
+  direction: ltr;
+  overflow: hidden;
+  display: block;
+}
+
+.modal .title {
+  font-weight: bold;
+  margin-top: 2px;
+  font-size: 1em;
+}
+
+.modal-body {
+  font-size: 0.9em;
+  padding-top: 10px;
+  font-weight: bold;
+}
+
+.modal-body > div {
+  color: var(--color-main-01);
+  padding: 7px 0;
+  border-bottom: 1px solid #dedede;
+}
+
+.modal-icon {
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 40px;
+  -webkit-border-radius: 40px;
+  -moz-border-radius: 40px;
+  color: white;
+  float: right;
+}
+
+.modal-icon.error {
+  background: var(--color-main-01);
+}
+
+.title.error {
+  color: var(--color-main-01);
+}
+
+#line {
+  width: 100%;
+  height: 2px;
+  background: var(--color-main-01);
+  margin: 8px 0 5px 0;
+}
+
+.modal-clear {
+  clear: both;
+}
+
+@media screen and (max-width: 480px) {
+  .modal {
+    width: 90%;
+  }
+
+  .modal .title {
+    font-size: 0.9em;
+    margin-top: 4px;
+  }
+
+  .modal-body {
+    font-size: 0.8em;
+  }
+}
+
+@keyframes animatetop {
+  from {
+    top: 0px;
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  to {
+    top: 0;
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@-webkit-keyframes animatetop {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media screen and (max-width: 500px) {
+  span {
+    font-size: 0.9em;
+  }
+}
+
+.button {
+  margin: 10px auto;
+}
+
+.submit {
+  text-align: center;
+  width: 100%;
+  margin: 10px auto 0 auto;
+}
+
+.submit .button {
+  position: relative;
+  margin: 10px auto;
+  width: 90%;
+  font-size: 119%;
+  border: none;
+  outline: none;
+  padding: 10px;
+  border-radius: 20px;
+  background: var(--color-main-01);
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  border-bottom: 10px solid rgba(0, 0, 0, 0.22);
+}
+
+.submit .button:hover {
+  background: var(--color-main-04);
+}

@@ -36,6 +36,12 @@ jobs:
         with:
           node-version: lts/*
           cache: 'npm'
+          #Allow repo secrets
+        env:
+          VITE_FUNCTION_KEY_postReceivablesInvoicesToTaxilla: ${{ secrets.VITE_FUNCTION_KEY_postReceivablesInvoicesToTaxilla }}
+          VITE_FUNCTION_KEY_postReceivablesCreditMemosToTaxilla: ${{ secrets.VITE_FUNCTION_KEY_postReceivablesCreditMemosToTaxilla }}
+          VITE_FUNCTION_KEY_postLastUpdatedReceivablesInvoicesToTaxilla: ${{ secrets.VITE_FUNCTION_KEY_postLastUpdatedReceivablesInvoicesToTaxilla }}
+          VITE_FUNCTION_KEY_postLastUpdatedReceivablesCreditMemosToTaxilla: ${{ secrets.VITE_FUNCTION_KEY_postLastUpdatedReceivablesCreditMemosToTaxilla }}
       - name: Install dependencies
         run: npm ci
       - name: Build
