@@ -2,6 +2,8 @@
 import path from 'path';
 //import Config from "vite";
 import { defineConfig, loadEnv } from "vite";
+import { runtimeEnv } from 'vite-plugin-runtime';
+
 
 
 
@@ -63,6 +65,10 @@ export default ({ mode }) => {
   const env = loadEnv(mode, process.cwd(), 'VITE_')
   console.log(env)
   return defineConfig({
+    plugins: [
+    runtimeEnv(),
+  ],
+  runtimeEnv: {}, // optional configuration object
     base: "./",
     define: {
       'process.env': env, //{}, // prevent errors in case something tries to access it directly
